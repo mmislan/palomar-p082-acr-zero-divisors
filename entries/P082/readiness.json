@@ -1,0 +1,31 @@
+{
+  "paper": "P082",
+  "problems": [
+    22,
+    23
+  ],
+  "historical_verification": "BASELINE_RECEIPTS_AUTHENTICATED_CURRENT_SOURCES_MODIFIED",
+  "challenge": "COMPILES_TARGET_STATEMENT_ONLY",
+  "solution": "DRAFT_NOT_VERIFIED",
+  "target_compilation": "NOT_RUN",
+  "comparator": "NOT_RUN",
+  "independent_kernels": "NOT_RUN",
+  "statement_fidelity": "SOURCE_READ_AGENT_REVIEWED_VERIFICATION_PENDING",
+  "metadata_review": "AGENT_PREPARED",
+  "scope_gap": false,
+  "publication": "NOT_AUTHORIZED",
+  "submission": "NOT_AUTHORIZED",
+  "selected_declarations": [
+    "ACRZeroDivisors.question313_necessity_counterexample",
+    "ACRZeroDivisors.question313_sufficiency_counterexample",
+    "ACRZeroDivisors.OrderWitness.unrestricted_order_counterexample",
+    "ACRZeroDivisors.mass_action_block_algorithm_complete"
+  ],
+  "historical_evidence": {
+    "audit": "preparation/historical-evidence-audit.json",
+    "preserved_directory": "migration/authenticated-historical/P082",
+    "checked_module_count": 41,
+    "changed_source_count": 7
+  },
+  "claim_evidence": "entries/P082/CLAIM-EVIDENCE.md"
+}

@@ -1,0 +1,41 @@
+{
+  "changes": [
+    {
+      "path": "proofs/ACRZeroDivisors/BlockGrouping.lean",
+      "before_sha256": "55244e9a434249fd038d1efeb8234899dc4c15a88aea0adb56dbccf6119a9d8b",
+      "after_sha256": "054cf1b89117fbc09918326923a9b9453022a80346af3adef9341f1deae494e7"
+    },
+    {
+      "path": "proofs/ACRZeroDivisors/OrderCertificate.lean",
+      "before_sha256": "c1646b6d6d750ae04154d882c5007d8364bc14b941d9e5d463000ff0865d3a7f",
+      "after_sha256": "9f8dfcbd6e852a51d7565771bec6bb652f3d7defb8d8052d0415c4e1eaa37e66"
+    },
+    {
+      "path": "proofs/ACRZeroDivisors/OrderMain.lean",
+      "before_sha256": "72f0ebe04eca18e02ac0fa95a1934036d1fb15523df17a672b92085a2cf2962c",
+      "after_sha256": "567eea8fb27689f551bc31c410c2e6a39cf2d8ab352a7d61ed3a907c5afa9340"
+    },
+    {
+      "path": "proofs/ACRZeroDivisors/OrderNormalForm.lean",
+      "before_sha256": "8993df4b6cd82a082a45d389f6e638e70a25be7a36bdd9d9d4111b3a8cd42cfd",
+      "after_sha256": "415eef56ebe7e29724938e12c1e36ed7124e21c97dfe0db6412d1333b4c031be"
+    },
+    {
+      "path": "proofs/ACRZeroDivisors/OrderOutput.lean",
+      "before_sha256": "ff535d99991c0552a5c6bc58cd54c67aaccdfc534116870a72a9bbeb10c7eeea",
+      "after_sha256": "e98942c8b4418e44883f7417bc3ef68136703a970a005e2e8f170e05e0d8c246"
+    },
+    {
+      "path": "proofs/ACRZeroDivisors/OrderReducedBasis.lean",
+      "before_sha256": "0b3668a8cd8281a890f5f9793eb143e05d03927abd7bcb7aad914cf4eb211c00",
+      "after_sha256": "507e3687128560e7904f89bd7594e0c19d302d12a6588aa5cdec4b51ad0dc19b"
+    },
+    {
+      "path": "proofs/ACRZeroDivisors/ScalarExtension.lean",
+      "before_sha256": "fd4353b7d25300e5b3f0223f8289f59e251cef90ab2129cf5b4208c7549684d4",
+      "after_sha256": "7245fa0e56eedb3995954e09314933e4386425b099ba68c4cc616f36894f86ac"
+    }
+  ],
+  "reason": "MvPolynomial is now wrapped AddMonoidAlgebra: use polynomial-first coefficient access and transport linear maps through coeffLinearEquiv.",
+  "verification": "PROOFS_NOT_YET_VERIFIED"
+}

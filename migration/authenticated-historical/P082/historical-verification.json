@@ -1,0 +1,113 @@
+{
+  "paper_id": "P082",
+  "status": "SOURCE_AND_ENVIRONMENT_MATCHED",
+  "lean_toolchain": "leanprover/lean4:v4.30.0",
+  "lake_manifest_sha256": "a8df0b606ec258561c226df89856884be433c19b49fb0a27335d69bb2b6e9fac",
+  "fresh_destination_run": false,
+  "receipt_closures": [
+    {
+      "root_module": "proofs.ACRZeroDivisors.CampaignRoot",
+      "receipt": "papers/P082-zero-divisor-acr/evidence/receipts/campaign_root.verify.json",
+      "receipt_sha256": "0ed3be76fc6ee8706fe62aa0de90414251da8d1e813546dc1a8f72c7a72bda45",
+      "source_hashes": {
+        "proofs.ACRZeroDivisors.CampaignRoot": "0ca8219ad6282cdfc74de8f5704c77684c17f7b4a67015d5ad23eb8b56e2f7a9",
+        "proofs.ACRZeroDivisors.PositiveLoci": "f443c1e8b12280209fb67dadfe6267da4e99bddb1fb336d5975baef9ab288121",
+        "proofs.ACRZeroDivisors.MassActionSource": "493f8347c6e393fd7f0a824ecd18db604965a64549765b50cbe16648f057e247",
+        "proofs.ACRZeroDivisors.NecessityIdeal": "8b6470b717666c1486f5658aace3a66c93acb4dcdca2d269a0a7874eb83b4bf3",
+        "proofs.ACRZeroDivisors.IdealSubstitution": "47e4e2d5cdea57176400c666fe35536db9c71970fa29d8a905dd923717fcbc87",
+        "proofs.ACRZeroDivisors.SufficiencyIdeal": "581f07f222729bd27628625bf791a249df4d8b2bbcfc3e5ce9fae4441ef56ba6",
+        "proofs.ACRZeroDivisors.SufficiencyCounterexample": "70104dd16ff41c1185256cd5e230fee02ab986bd32fd0578b741322c4b64a2b2",
+        "proofs.ACRZeroDivisors.OrderExponent": "1bd8a1fee32d80da1c1a0293178c5960a229bbbf53addf1c298f1cf7671717d3",
+        "proofs.ACRZeroDivisors.OrderNormalForm": "8993df4b6cd82a082a45d389f6e638e70a25be7a36bdd9d9d4111b3a8cd42cfd",
+        "proofs.ACRZeroDivisors.OrderCertificate": "c1646b6d6d750ae04154d882c5007d8364bc14b941d9e5d463000ff0865d3a7f",
+        "proofs.ACRZeroDivisors.OrderOutput": "ff535d99991c0552a5c6bc58cd54c67aaccdfc534116870a72a9bbeb10c7eeea",
+        "proofs.ACRZeroDivisors.OrderCounterexample": "8114df37c4561afefdc7d5ce065f0f4120a49786c8b0a9ecc434173e549bed6e",
+        "proofs.ACRZeroDivisors.OrderReducedBasis": "0b3668a8cd8281a890f5f9793eb143e05d03927abd7bcb7aad914cf4eb211c00",
+        "proofs.ACRZeroDivisors.OrderMain": "72f0ebe04eca18e02ac0fa95a1934036d1fb15523df17a672b92085a2cf2962c",
+        "proofs.ACRZeroDivisors.MonicRegularity": "296830b80d496f1dcf52dae2cf43bb4640046c623eaba1006a19f897ab3050ff",
+        "proofs.ACRZeroDivisors.BlockGrouping": "55244e9a434249fd038d1efeb8234899dc4c15a88aea0adb56dbccf6119a9d8b",
+        "proofs.ACRZeroDivisors.CoefficientLocalization": "e7903f93de025a400983a62207917e9f2d242ca58b72589c5972d619d5870f23",
+        "proofs.ACRZeroDivisors.TorsionSurvival": "cc2e9c99411677a76dfab2a40f1a58fc91c9432fec48e3c164ca759dff0fc336",
+        "proofs.ACRZeroDivisors.BlockCoefficientCore": "7f4646581023a7d77d4af5df9c06d00229f0ee42fb88b0c46bd0d3a0b15f7c63",
+        "proofs.ACRZeroDivisors.ScalarExtension": "fd4353b7d25300e5b3f0223f8289f59e251cef90ab2129cf5b4208c7549684d4",
+        "proofs.ACRZeroDivisors.BlockTorsion": "d70c7cb9d22974d15600ced37845a908fd5cefe1c66926f74a790b926f73b869",
+        "proofs.ACRZeroDivisors.BlockScalarExtension": "db608a0969bbb5252f3707a7533dbbf1d378fbb1a2b2ca7b785bf725c375093f",
+        "proofs.ACRZeroDivisors.BlockAlgorithm": "ed42ae1ae47d86e672f8029a2f9b1f3b3f8413a90ff400e31f000e3f7ed0ef66",
+        "proofs.ACRZeroDivisors.MassActionIdealBridge": "15a69fe9d57ca9350c1298f03b8b1cdf6b89c8f9b18d4bbedf60e5c05e765c03",
+        "proofs.ACRZeroDivisors.MassActionCompleteness": "b2620ed11a6a25d33cfcf25396c6154d3e9e46b5356f0c79f6fca9632409e184",
+        "proofs.ACRZeroDivisors.BlockOrder": "9f7f05646bb12cd55c020e5640cd21f66c1e2965231891d72f64a8b844e02815",
+        "proofs.ACRZeroDivisors.GraphIdeal": "ed9edeb24d47f644983edceedcbdf885b0918d580939a99b23ca8640b003ab83",
+        "proofs.ACRZeroDivisors.TriangularRelease": "74796c62394539bca7b631a50b62d8a22f2ff626d45644eaed07049b7b92e2b2",
+        "proofs.ACRZeroDivisors.ReleaseIdeal": "cba6dd6952efc01469c607d9cb3ca5dc73f33bb5832c80b7573d0fdcc110a34d",
+        "proofs.ACRZeroDivisors.ReleaseFlux": "d5dbc08cf7ccbc1e025dca402530c9236cb587c51c6183ed713da8de8bc40bee",
+        "proofs.ACRZeroDivisors.ReleasePositive": "5afbc3600c51e67f5731e750ec21c6faed9c4941124b2134d8fff68f7eee584b",
+        "proofs.ACRZeroDivisors.ReleaseACR": "c1f89a9856c8f10b08c9250f6e7c7fc4cf76609e74c6c50cc641d39624b60f67"
+      },
+      "probed_declarations": [
+        "ACRZeroDivisors.campaign_root"
+      ]
+    },
+    {
+      "root_module": "proofs.ACRZeroDivisors.PaperRoot",
+      "receipt": "papers/P082-zero-divisor-acr/evidence/receipts/paper_root.verify.json",
+      "receipt_sha256": "5700abf5a18f6e1ac65fb5a289ffba3a938af703936d819bfa2e6ebb28faf700",
+      "source_hashes": {
+        "proofs.ACRZeroDivisors.PaperRoot": "196fa5ef421cc3680f2ff0100ff2c6fb705bf11849d0b67d021e2327c31a737d",
+        "proofs.ACRZeroDivisors.PositiveLoci": "f443c1e8b12280209fb67dadfe6267da4e99bddb1fb336d5975baef9ab288121",
+        "proofs.ACRZeroDivisors.MassActionSource": "493f8347c6e393fd7f0a824ecd18db604965a64549765b50cbe16648f057e247",
+        "proofs.ACRZeroDivisors.NecessityIdeal": "8b6470b717666c1486f5658aace3a66c93acb4dcdca2d269a0a7874eb83b4bf3",
+        "proofs.ACRZeroDivisors.IdealSubstitution": "47e4e2d5cdea57176400c666fe35536db9c71970fa29d8a905dd923717fcbc87",
+        "proofs.ACRZeroDivisors.SufficiencyIdeal": "581f07f222729bd27628625bf791a249df4d8b2bbcfc3e5ce9fae4441ef56ba6",
+        "proofs.ACRZeroDivisors.SufficiencyCounterexample": "70104dd16ff41c1185256cd5e230fee02ab986bd32fd0578b741322c4b64a2b2",
+        "proofs.ACRZeroDivisors.OrderExponent": "1bd8a1fee32d80da1c1a0293178c5960a229bbbf53addf1c298f1cf7671717d3",
+        "proofs.ACRZeroDivisors.OrderNormalForm": "8993df4b6cd82a082a45d389f6e638e70a25be7a36bdd9d9d4111b3a8cd42cfd",
+        "proofs.ACRZeroDivisors.OrderCertificate": "c1646b6d6d750ae04154d882c5007d8364bc14b941d9e5d463000ff0865d3a7f",
+        "proofs.ACRZeroDivisors.OrderOutput": "ff535d99991c0552a5c6bc58cd54c67aaccdfc534116870a72a9bbeb10c7eeea",
+        "proofs.ACRZeroDivisors.OrderCounterexample": "8114df37c4561afefdc7d5ce065f0f4120a49786c8b0a9ecc434173e549bed6e",
+        "proofs.ACRZeroDivisors.OrderReducedBasis": "0b3668a8cd8281a890f5f9793eb143e05d03927abd7bcb7aad914cf4eb211c00",
+        "proofs.ACRZeroDivisors.OrderMain": "72f0ebe04eca18e02ac0fa95a1934036d1fb15523df17a672b92085a2cf2962c",
+        "proofs.ACRZeroDivisors.MonicRegularity": "296830b80d496f1dcf52dae2cf43bb4640046c623eaba1006a19f897ab3050ff",
+        "proofs.ACRZeroDivisors.BlockGrouping": "55244e9a434249fd038d1efeb8234899dc4c15a88aea0adb56dbccf6119a9d8b",
+        "proofs.ACRZeroDivisors.CoefficientLocalization": "e7903f93de025a400983a62207917e9f2d242ca58b72589c5972d619d5870f23",
+        "proofs.ACRZeroDivisors.TorsionSurvival": "cc2e9c99411677a76dfab2a40f1a58fc91c9432fec48e3c164ca759dff0fc336",
+        "proofs.ACRZeroDivisors.BlockCoefficientCore": "7f4646581023a7d77d4af5df9c06d00229f0ee42fb88b0c46bd0d3a0b15f7c63",
+        "proofs.ACRZeroDivisors.ScalarExtension": "fd4353b7d25300e5b3f0223f8289f59e251cef90ab2129cf5b4208c7549684d4",
+        "proofs.ACRZeroDivisors.BlockTorsion": "d70c7cb9d22974d15600ced37845a908fd5cefe1c66926f74a790b926f73b869",
+        "proofs.ACRZeroDivisors.BlockScalarExtension": "db608a0969bbb5252f3707a7533dbbf1d378fbb1a2b2ca7b785bf725c375093f",
+        "proofs.ACRZeroDivisors.BlockAlgorithm": "ed42ae1ae47d86e672f8029a2f9b1f3b3f8413a90ff400e31f000e3f7ed0ef66",
+        "proofs.ACRZeroDivisors.MassActionIdealBridge": "15a69fe9d57ca9350c1298f03b8b1cdf6b89c8f9b18d4bbedf60e5c05e765c03",
+        "proofs.ACRZeroDivisors.MassActionCompleteness": "b2620ed11a6a25d33cfcf25396c6154d3e9e46b5356f0c79f6fca9632409e184",
+        "proofs.ACRZeroDivisors.BlockOrder": "9f7f05646bb12cd55c020e5640cd21f66c1e2965231891d72f64a8b844e02815",
+        "proofs.ACRZeroDivisors.GraphIdeal": "ed9edeb24d47f644983edceedcbdf885b0918d580939a99b23ca8640b003ab83",
+        "proofs.ACRZeroDivisors.TriangularRelease": "74796c62394539bca7b631a50b62d8a22f2ff626d45644eaed07049b7b92e2b2",
+        "proofs.ACRZeroDivisors.ReleaseIdeal": "cba6dd6952efc01469c607d9cb3ca5dc73f33bb5832c80b7573d0fdcc110a34d",
+        "proofs.ACRZeroDivisors.ReleaseFlux": "d5dbc08cf7ccbc1e025dca402530c9236cb587c51c6183ed713da8de8bc40bee",
+        "proofs.ACRZeroDivisors.ReleasePositive": "5afbc3600c51e67f5731e750ec21c6faed9c4941124b2134d8fff68f7eee584b",
+        "proofs.ACRZeroDivisors.ReleaseACR": "c1f89a9856c8f10b08c9250f6e7c7fc4cf76609e74c6c50cc641d39624b60f67",
+        "proofs.ACRZeroDivisors.CampaignRoot": "0ca8219ad6282cdfc74de8f5704c77684c17f7b4a67015d5ad23eb8b56e2f7a9",
+        "proofs.ACRZeroDivisors.ResidualBounds": "b93c52d0935691d5b43184a1ebc06dd186c4de940ab0825fd574dea386a2bcbb",
+        "proofs.ACRZeroDivisors.ReactorAlgebra": "e997a49edf50a8847e174b4cb2bfb3297060985ab4fbda046706b6c6e0f32a47",
+        "proofs.ACRZeroDivisors.ReactorStability": "f715c84a53c5c4199c98d6ab5b687cbcf231b7f212a3ca0d49cb6037434f77db",
+        "proofs.ACRZeroDivisors.EnvZCertificates": "459f4b9a0ad352bd512d2e33c0817d3da231ce4ece9301c272f4e598b47c4174",
+        "proofs.ACRZeroDivisors.ReleaseCosts": "2f0979a306e45c6de8ad864624025355c585e259fac4387bc7b596d6ac121687",
+        "proofs.ACRZeroDivisors.AssociatedTorsion": "5fe90090975ca4da6b5d674e04270247570d2a51582bfad3077a16bac46f1b15",
+        "proofs.ACRZeroDivisors.GeometryFixtures": "a460efa4ebf3cee2b8f1e25fd5b3cdac3d069a6c02763a3a854a23a64ad24e85"
+      },
+      "probed_declarations": [
+        "ACRZeroDivisors.paper_root"
+      ]
+    },
+    {
+      "root_module": "proofs.ACRZeroDivisors.RegularityCertificates",
+      "receipt": "papers/P082-zero-divisor-acr/evidence/receipts/regularity_certificates.verify.json",
+      "receipt_sha256": "13c1d1711b2076d56165c9d09778445bd7fa771771fadd0a751bcd5e6dbff36a",
+      "source_hashes": {
+        "proofs.ACRZeroDivisors.RegularityCertificates": "5547acdaa2860378690a1c315b154c14e63c710f5df1e9e847927f9b63e5ccb3"
+      },
+      "probed_declarations": [
+        "ACRZeroDivisors.envZ_regular_minor"
+      ]
+    }
+  ],
+  "scope": "The current 24-page paper distinguishes its compiled algebra from conventional geometry and dynamics. The strict CampaignRoot and PaperRoot receipts cover the two bimolecular counterexamples to necessity/sufficiency of a unique candidate, the admitted mixed-order counterexample, block-order completeness for rational mass-action input with real witnesses, release-ring and ACR transfer, and residual/reactor/EnvZ/release algebra. RegularityCertificates is separately source- and environment-matched. Completeness assumes block compatibility, ideal membership and leading-monomial coverage, plus nonvacuous ACR and coordinate candidacy; it is a mathematical candidate-set theorem, not a verified root-isolation program or ACR decision procedure. Regular-point coverage, nonlinear stability, invariant-region reasoning, parts of positive-pool reconstruction and dynamical interpretation remain conventional. Exact finite computations are not kernel proofs. Three saved elaborated standard-axiom interfaces cover campaign_root, paper_root and envZ_regular_minor; other listed declarations inherit source-bound module compilation without individual saved probes."
+}
