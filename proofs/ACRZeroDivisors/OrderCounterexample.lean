@@ -62,6 +62,7 @@ theorem witness_rational_ideal : rationalSteadyIdeal witnessNetwork = basisIdeal
     · have h := (rationalSteadyIdeal witnessNetwork).sub_mem
         ((rationalSteadyIdeal witnessNetwork).mul_mem_left (X 1) h2)
         ((rationalSteadyIdeal witnessNetwork).mul_mem_left (X 0) h3)
+      show b1 ∈ rationalSteadyIdeal witnessNetwork
       convert h using 1
       rw [b1_expression,b2_expression,b3_expression]
       ring

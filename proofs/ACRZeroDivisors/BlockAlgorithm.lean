@@ -51,7 +51,6 @@ theorem block_algorithm_complete {σ ι : Type*} [Fintype ι]
     BlockAlgorithmCandidates z b a := by
   classical
   refine ⟨ha,?_⟩
-  change (if h : ∃ j, UnivariateBasisEntry b j then _ else _)
   split_ifs with h
   · let j := Classical.choose h
     have hj : optionEquivRight ℚ σ (b j.1) = C j.2 := Classical.choose_spec h
@@ -61,7 +60,7 @@ theorem block_algorithm_complete {σ ι : Type*} [Fintype ι]
     change j.2.eval₂ (algebraMap ℚ ℝ) a = eval₂Hom (algebraMap ℚ ℝ) x (b j.1) at he
     change j.2.eval₂ (algebraMap ℚ ℝ) a = 0
     rw [he]
-    simpa only [eval_map] using hb
+    simpa only [eval_map,coe_eval₂Hom] using hb
   · have hone : (1 : MvPolynomial (Option σ) ℝ) ∉ I.map (map (algebraMap ℚ ℝ)) := by
       intro h1
       have hh := hx 1 h1

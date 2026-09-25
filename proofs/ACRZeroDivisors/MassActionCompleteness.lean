@@ -25,6 +25,7 @@ theorem mass_action_block_algorithm_complete {n : ℕ} {σ ι : Type*} [Fintype 
     (rs : List (Reaction n)) (e : Fin n ≃ Option σ)
     (full : MonomialOrder (Option σ)) (z : MonomialOrder σ)
     (hblock : BlockCompatible full z) (b : ι → MvPolynomial (Option σ) ℚ)
+    (_hb0 : ∀ i, b i ≠ 0)
     (hcover : HasLeadingCover full ((rationalSteadyIdeal rs).map (rename e).toRingHom) b)
     (hgen : ∀ i, b i ∈ (rationalSteadyIdeal rs).map (rename e).toRingHom)
     (a : ℝ) (hac : NonvacuousACR rs (e.symm none) a)

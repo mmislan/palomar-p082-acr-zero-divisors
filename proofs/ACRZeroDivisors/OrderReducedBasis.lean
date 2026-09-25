@@ -37,12 +37,12 @@ theorem basis_leaders_monic : (b1).coeff L1 = 1 ∧ (b2).coeff L2 = 1 ∧ (b3).c
     have hh := congrArg (fun e : Exponent => e 0) h
     norm_num [L3] at hh
   constructor
-  · change ((monomial L1 1-monomial (Finsupp.single 1 2) 1)).coeff L1 = 1
+  · change ((monomial L1 1-monomial (Finsupp.single 1 2) 1 : P)).coeff L1 = 1
     simp [coeff_monomial,h1]
   constructor
-  · change ((monomial L2 1-monomial (Finsupp.single 1 1) 1)).coeff L2 = 1
+  · change ((monomial L2 1-monomial (Finsupp.single 1 1) 1 : P)).coeff L2 = 1
     simp [coeff_monomial,h2]
-  · change ((monomial L3 1-monomial (Finsupp.single 0 1) 1)).coeff L3 = 1
+  · change ((monomial L3 1-monomial (Finsupp.single 0 1) 1 : P)).coeff L3 = 1
     simp [coeff_monomial,h3]
 
 theorem basis_tails_standard :
