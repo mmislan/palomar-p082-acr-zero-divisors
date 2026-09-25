@@ -23,9 +23,10 @@ theorem grouped_coeff {σ K : Type*} [CommRing K]
         rw [eq_comm, hz, eq_comm (a := d)]
       rw [optionEquivRight_C,coeff_C,coeff_C]
       by_cases hd : 0 = d
-      · simp only [hd,if_true,hz',true_and,Polynomial.coeff_C]
-      · simp only [hd,if_false,hz',false_and,Polynomial.coeff_zero]
-  | add p q hp hq => simp only [map_add,coeff_add,Polynomial.coeff_add,hp,hq]
+      · simp only [hd,ite_true,hz',true_and,Polynomial.coeff_C]
+      · simp only [hd,ite_false,hz',false_and,Polynomial.coeff_zero]
+  | add p q hp hq =>
+      simp only [map_add,Polynomial.coeff_add,AddMonoidAlgebra.coeff_add,Finsupp.add_apply,hp,hq]
   | mul_X p i hp =>
       cases i with
       | some i =>

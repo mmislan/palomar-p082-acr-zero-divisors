@@ -17,7 +17,7 @@ theorem block_coefficient_regular {σ K ι : Type*} [Field K]
   have hH0 : H ≠ 0 := by intro h; simp [h] at hH
   let S := Localization.Away H
   have hM := powers_le_nonZeroDivisors_of_noZeroDivisors hH0
-  letI : IsDomain S := IsLocalization.isDomain_of_le_nonZeroDivisors S hM
+  let : IsDomain S := IsLocalization.isDomain_of_le_nonZeroDivisors S hM
   have hinj := IsLocalization.injective S hM
   have hunits : ∀ i, IsUnit (algebraMap (Polynomial K) S (m.leadingCoeff (b i))) := by
     intro i

@@ -28,10 +28,10 @@ theorem b1_expression : b1 = (X 0)^2-(X 1)^2 := by
   simp only [b1,X_pow_eq_monomial]
 
 theorem b2_expression : b2 = X 0*X 2-X 1 := by
-  simp only [b2,X,monomial_mul,mul_one]
+  simp only [b2,X,monomial_mul_monomial,mul_one]
 
 theorem b3_expression : b3 = X 1*X 2-X 0 := by
-  simp only [b3,X,monomial_mul,mul_one]
+  simp only [b3,X,monomial_mul_monomial,mul_one]
 
 theorem witness_polynomial_fieldQ : polynomialFieldQ witnessNetwork = ![-b2,-b3,0] := by
   funext i
@@ -134,7 +134,7 @@ theorem witness_no_candidates (alpha : ℝ) : ¬ AlgorithmCandidates {b1,b2,b3} 
   have hn : ¬ ∃ g ∈ ({b1,b2,b3} : Set P), PureT g := by
     rintro ⟨g,hg,h⟩
     exact basis_no_pureT g hg h
-  rw [AlgorithmCandidates,if_neg hn]
+  rw [AlgorithmCandidates,ite_eq_right hn]
   rintro ⟨ha,g,hg,hroot⟩
   simp only [Set.mem_insert_iff,Set.mem_singleton_iff] at hg
   rcases hg with rfl | rfl | rfl

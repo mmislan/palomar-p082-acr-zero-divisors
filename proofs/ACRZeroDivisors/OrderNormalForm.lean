@@ -18,7 +18,7 @@ theorem normalForm_binomial_mul (l r : Exponent)
     normalForm (p*(monomial l 1-monomial r 1)) = 0 := by
   induction p using MvPolynomial.induction_on' with
   | monomial e c =>
-      rw [mul_sub,monomial_mul,monomial_mul,map_sub,
+      rw [mul_sub,monomial_mul_monomial,monomial_mul_monomial,map_sub,
         normalForm_monomial,normalForm_monomial,h]
       simp
   | add p q hp hq => simp [add_mul,map_add,hp,hq]
@@ -97,7 +97,7 @@ theorem basisIdeal_leading_not_standard {e : Exponent} {p : P}
     (hp : p ∈ basisIdeal) (he : IsLeading e p) : ¬ Standard e := by
   intro hs
   have h := normal_preserves_standard_leader he hs
-  rw [basisIdeal_normal_zero hp,coeff_zero] at h
+  rw [basisIdeal_normal_zero hp,AddMonoidAlgebra.coeff_zero,Finsupp.zero_apply] at h
   exact he.1 h.symm
 
 end ACRZeroDivisors.OrderWitness

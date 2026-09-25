@@ -28,7 +28,7 @@ theorem leadingCoefficientZ_eq (p : P) (e : Exponent) (he : e ∈ p.support)
     leadingCoefficientZ p = tCoefficient (e 0) (e 1) p := by
   classical
   have hn : p.support.Nonempty := ⟨e,he⟩
-  rw [leadingCoefficientZ,dif_pos hn]
+  rw [leadingCoefficientZ,dite_eq_left hn]
   let d := Classical.choose (p.support.exists_max_image zKey hn)
   have hd := Classical.choose_spec (p.support.exists_max_image zKey hn)
   have hk : zKey d = zKey e := le_antisymm (hmax d hd.1) (hd.2 e he)

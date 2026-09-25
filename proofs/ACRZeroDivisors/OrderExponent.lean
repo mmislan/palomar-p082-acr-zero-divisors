@@ -23,11 +23,11 @@ def MixedLT (e f : Exponent) : Prop :=
 theorem parity_lt (e : Exponent) : parity e < 2 := Nat.mod_lt _ (by decide)
 
 theorem normal_of_zero (e : Exponent) (h : zDegree e = 0) : normalExponent e = e := by
-  rw [normalExponent,if_pos h]
+  rw [normalExponent,ite_eq_left h]
 
 theorem normal_of_nonzero (e : Exponent) (h : zDegree e ≠ 0) :
     normalExponent e = Finsupp.single 0 (parity e) + Finsupp.single 1 (zDegree e-parity e) := by
-  rw [normalExponent,if_neg h]
+  rw [normalExponent,ite_eq_right h]
 
 theorem normal_zero (e : Exponent) (h : zDegree e ≠ 0) : normalExponent e 0 = parity e := by
   rw [normal_of_nonzero e h]
@@ -42,8 +42,8 @@ theorem normal_one (e : Exponent) (h : zDegree e ≠ 0) : normalExponent e 1 = z
 theorem normal_two (e : Exponent) (h : zDegree e ≠ 0) : normalExponent e 2 = 0 := by
   rw [normal_of_nonzero e h]
   simp only [Finsupp.add_apply,Finsupp.single_apply]
-  simp only [if_neg (show (0 : Fin 3) ≠ 2 by decide),
-    if_neg (show (1 : Fin 3) ≠ 2 by decide),zero_add]
+  simp only [ite_eq_right (show (0 : Fin 3) ≠ 2 by decide),
+    ite_eq_right (show (1 : Fin 3) ≠ 2 by decide),zero_add]
 
 theorem normal_zDegree (e : Exponent) : zDegree (normalExponent e) = zDegree e := by
   by_cases h : zDegree e = 0

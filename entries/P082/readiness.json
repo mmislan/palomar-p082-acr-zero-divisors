@@ -27,5 +27,11 @@
     "checked_module_count": 41,
     "changed_source_count": 7
   },
-  "claim_evidence": "entries/P082/CLAIM-EVIDENCE.md"
+  "claim_evidence": "entries/P082/CLAIM-EVIDENCE.md",
+  "target_repairs": "PREPARED_NOT_COMPILED",
+  "target_repair_records": [
+    "preparation/repairs/2026-09-25/MECHANICAL.json",
+    "preparation/repairs/2026-09-25/G7.json"
+  ],
+  "previous_target_run": "FAILED (preparation/verification/remaining-submit-ready)"
 }

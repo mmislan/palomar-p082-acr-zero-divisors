@@ -44,7 +44,7 @@
         "Mercedes Pérez Millán",
         "Anne Shiu"
       ],
-      "type": "article",
+      "type": "paper",
       "relationship": "background",
       "note": "Journal of Symbolic Computation 128 (2025), article 102398; arXiv:2401.00078v3. Question 3.13 (condition (13) for at most bimolecular networks) and Conjecture 4.7 (completeness of Algorithm 1 for zero-divisor ACR values), numbered as cited by the companion manuscript.",
       "id": "doi:10.1016/j.jsc.2024.102398",

@@ -1,5 +1,5 @@
 import proofs.ACRZeroDivisors.BlockScalarExtension
-import Mathlib.Data.Real.Basic
+import Mathlib.Basic.Real.Basic
 import Mathlib.Algebra.Algebra.Rat
 
 namespace ACRZeroDivisors
