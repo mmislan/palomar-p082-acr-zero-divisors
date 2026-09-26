@@ -1,3 +1,4 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import proofs.ACRZeroDivisors.OrderExponent
 import Mathlib.LinearAlgebra.Finsupp.Defs
 import Mathlib.RingTheory.Ideal.Span
@@ -5,8 +6,6 @@ import Mathlib.Tactic.Ring
 
 namespace ACRZeroDivisors.OrderWitness
 open MvPolynomial
-abbrev P := MvPolynomial (Fin 3) ℚ
-
 noncomputable def normalForm : P →ₗ[ℚ] P := AddMonoidAlgebra.mapDomainLinearMap ℚ ℚ normalExponent
 
 theorem normalForm_monomial (e : Exponent) (c : ℚ) :
@@ -33,12 +32,8 @@ noncomputable def normalAnnihilator : Ideal P where
     intro c p hp r
     simpa only [smul_eq_mul,mul_assoc] using hp (r*c)
 
-noncomputable def b1 : P := monomial (Finsupp.single 0 2) 1-monomial (Finsupp.single 1 2) 1
-noncomputable def b2 : P :=
-  monomial (Finsupp.single 0 1+Finsupp.single 2 1) 1-monomial (Finsupp.single 1 1) 1
-noncomputable def b3 : P :=
-  monomial (Finsupp.single 1 1+Finsupp.single 2 1) 1-monomial (Finsupp.single 0 1) 1
-noncomputable def basisIdeal : Ideal P := Ideal.span {b1,b2,b3}
+
+
 
 theorem basisIdeal_normal_zero {p : P} (hp : p ∈ basisIdeal) : normalForm p = 0 := by
   have hle : basisIdeal ≤ normalAnnihilator := by
@@ -58,9 +53,6 @@ theorem basisIdeal_normal_zero {p : P} (hp : p ∈ basisIdeal) : normalForm p = 
       simpa only [← add_assoc] using normal_relation_tv e
   have h := hle hp 1
   simpa only [one_mul] using h
-
-def IsLeading (e : Exponent) (p : P) : Prop :=
-  (p).coeff e ≠ 0 ∧ ∀ d ∈ p.support, d = e ∨ MixedLT d e
 
 theorem normal_le (e : Exponent) : normalExponent e = e ∨ MixedLT (normalExponent e) e := by
   by_cases h : Standard e

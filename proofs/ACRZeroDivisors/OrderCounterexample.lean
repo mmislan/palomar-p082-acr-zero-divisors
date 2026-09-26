@@ -1,3 +1,4 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import proofs.ACRZeroDivisors.OrderOutput
 import proofs.ACRZeroDivisors.NecessityIdeal
 import Mathlib.Algebra.Polynomial.Eval.Algebra
@@ -5,24 +6,12 @@ import Mathlib.Algebra.Polynomial.Eval.Algebra
 namespace ACRZeroDivisors.OrderWitness
 open MvPolynomial
 
-def witnessNetwork : List (Reaction 3) :=
-  [⟨![1,0,1], ![0,0,1], 1⟩, ⟨![0,1,0], ![1,1,0], 1⟩,
-   ⟨![1,0,0], ![1,1,0], 1⟩, ⟨![0,1,1], ![0,0,1], 1⟩]
-
 theorem witness_bimolecular : ∀ r ∈ witnessNetwork, Bimolecular r := by
   norm_num [witnessNetwork,Bimolecular,Fin.sum_univ_succ]
 
 theorem witness_field (u v t : ℝ) : field witnessNetwork ![u,v,t] = ![v-t*u,u-t*v,0] := by
   funext i
   fin_cases i <;> norm_num [field,witnessNetwork,Fin.prod_univ_succ] <;> ring
-
-noncomputable def polynomialFieldQ {n : ℕ} (rs : List (Reaction n))
-    (i : Fin n) : MvPolynomial (Fin n) ℚ :=
-  (rs.map fun r => C r.rate * (∏ j, X j^r.source j) *
-    (C (r.target i : ℚ)-C (r.source i : ℚ))).sum
-
-noncomputable def rationalSteadyIdeal {n : ℕ} (rs : List (Reaction n)) :
-    Ideal (MvPolynomial (Fin n) ℚ) := Ideal.span (Set.range (polynomialFieldQ rs))
 
 theorem b1_expression : b1 = (X 0)^2-(X 1)^2 := by
   simp only [b1,X_pow_eq_monomial]
@@ -119,17 +108,6 @@ theorem witness_zero_divisor :
       convert h using 1
       norm_num
       ring
-
-noncomputable def univariateT (p : P) : Polynomial ℚ :=
-  eval₂Hom Polynomial.C ![0,0,Polynomial.X] p
-
-noncomputable def AlgorithmCandidates (G : Set P) (alpha : ℝ) : Prop := by
-  classical
-  exact 0 < alpha ∧
-  if ∃ g ∈ G, PureT g then
-    ∃ g ∈ G, PureT g ∧ Polynomial.eval₂ (Rat.castHom ℝ) alpha (univariateT g) = 0
-  else
-    ∃ g ∈ G, Polynomial.eval₂ (Rat.castHom ℝ) alpha (leadingCoefficientZ g) = 0
 
 theorem witness_no_candidates (alpha : ℝ) : ¬ AlgorithmCandidates {b1,b2,b3} alpha := by
   have hn : ¬ ∃ g ∈ ({b1,b2,b3} : Set P), PureT g := by

@@ -1,15 +1,10 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import Mathlib.RingTheory.MvPolynomial.Groebner
 import Mathlib.RingTheory.Ideal.Span
 import Mathlib.Tactic.Ring
 
 namespace ACRZeroDivisors
 open MvPolynomial
-
-/-- The leading-ideal criterion for a given family of generators. -/
-def HasLeadingCover {σ R ι : Type*} [CommRing R]
-    (m : MonomialOrder σ) (I : Ideal (MvPolynomial σ R))
-    (b : ι → MvPolynomial σ R) : Prop :=
-  ∀ p ∈ I, p ≠ 0 → ∃ i, m.degree (b i) ≤ m.degree p
 
 /-- Monic division plus the leading-ideal criterion rules out coefficient torsion.
 No finite-dimensionality or finiteness of the set of standard monomials is used. -/

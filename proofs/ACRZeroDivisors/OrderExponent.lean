@@ -1,3 +1,4 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import Mathlib.Algebra.MvPolynomial.Basic
 import Mathlib.Data.Fin.VecNotation
 import Mathlib.Tactic.FinCases
@@ -6,19 +7,13 @@ import Mathlib.Tactic.NormNum
 
 namespace ACRZeroDivisors.OrderWitness
 
-abbrev Exponent := Fin 3 →₀ ℕ
 
-def zDegree (e : Exponent) : ℕ := e 0+e 1
 def parity (e : Exponent) : ℕ := (e 0+e 2)%2
 noncomputable def normalExponent (e : Exponent) : Exponent :=
   if zDegree e = 0 then e else
     Finsupp.single 0 (parity e) + Finsupp.single 1 (zDegree e-parity e)
 
 def Standard (e : Exponent) : Prop := e 0 < 2 ∧ (e 2 = 0 ∨ zDegree e = 0)
-
-def MixedLT (e f : Exponent) : Prop :=
-  zDegree e < zDegree f ∨ (zDegree e = zDegree f ∧
-    (e 2 < f 2 ∨ (e 2 = f 2 ∧ e 0 < f 0)))
 
 theorem parity_lt (e : Exponent) : parity e < 2 := Nat.mod_lt _ (by decide)
 

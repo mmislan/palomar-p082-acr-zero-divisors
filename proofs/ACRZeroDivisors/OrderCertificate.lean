@@ -1,3 +1,4 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import proofs.ACRZeroDivisors.OrderNormalForm
 import Mathlib.Data.Prod.Lex
 import Mathlib.Data.Finset.Max
@@ -50,9 +51,7 @@ theorem leading_exists (p : P) (hp : p ≠ 0) : ∃ e, IsLeading e p := by
   · exact Or.inr ((mixedKey_lt d e).mp h)
   · exact Or.inl (mixedKey_injective h)
 
-noncomputable def L1 : Exponent := Finsupp.single 0 2
-noncomputable def L2 : Exponent := Finsupp.single 0 1+Finsupp.single 2 1
-noncomputable def L3 : Exponent := Finsupp.single 1 1+Finsupp.single 2 1
+
 
 theorem nonstandard_divisible (e : Exponent) (he : ¬ Standard e) :
     L1 ≤ e ∨ L2 ≤ e ∨ L3 ≤ e := by

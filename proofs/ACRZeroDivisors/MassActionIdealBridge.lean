@@ -1,17 +1,10 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import proofs.ACRZeroDivisors.NecessityIdeal
 import Mathlib.RingTheory.Ideal.Maps
 import Mathlib.Algebra.Algebra.Rat
 
 namespace ACRZeroDivisors
 open MvPolynomial
-
-noncomputable def rationalPolynomialField {n : ℕ} (rs : List (Reaction n))
-    (i : Fin n) : MvPolynomial (Fin n) ℚ :=
-  (rs.map fun r => C r.rate * (∏ j, X j ^ r.source j) *
-    (C (r.target i : ℚ) - C (r.source i : ℚ))).sum
-
-noncomputable def rationalSteadyIdeal {n : ℕ} (rs : List (Reaction n)) :
-    Ideal (MvPolynomial (Fin n) ℚ) := Ideal.span (Set.range (rationalPolynomialField rs))
 
 theorem rational_field_cast {n : ℕ} (rs : List (Reaction n)) (i : Fin n) :
     map (algebraMap ℚ ℝ) (rationalPolynomialField rs i) = polynomialField rs i := by

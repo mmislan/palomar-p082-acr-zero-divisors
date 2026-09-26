@@ -1,12 +1,9 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import proofs.ACRZeroDivisors.SufficiencyIdeal
 import Mathlib.Tactic.LinearCombination
 
 namespace ACRZeroDivisors
 open MvPolynomial
-
-def CoordinateCandidate4 (I : Ideal Poly4) (alpha : ℝ) : Prop :=
-  X 0-C alpha ∈ I ∨
-    (X 0-C alpha ∉ I ∧ ∃ h : Poly4, h ∉ I ∧ (X 0-C alpha)*h ∈ I)
 
 theorem diagonal_coordinate (alpha : ℝ) :
     diagonal (X 0-C alpha) = X 0-C alpha := by

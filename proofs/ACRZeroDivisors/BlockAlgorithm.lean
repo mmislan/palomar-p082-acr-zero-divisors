@@ -1,3 +1,4 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import proofs.ACRZeroDivisors.BlockScalarExtension
 import Mathlib.Basic.Real.Basic
 import Mathlib.Algebra.Algebra.Rat
@@ -21,18 +22,6 @@ theorem eval_grouped {σ K L : Type*} [Field K] [Field L]
           rw [optionEquivRight_X_none,eval₂Hom_C,eval₂Hom_X']
           simp only [Polynomial.coe_eval₂RingHom,Polynomial.eval₂_X]
       | some i => rw [optionEquivRight_X_some,eval₂Hom_X',eval₂Hom_X']
-
-def UnivariateBasisEntry {σ ι : Type*} (b : ι → MvPolynomial (Option σ) ℚ)
-    (j : ι × Polynomial ℚ) : Prop := optionEquivRight ℚ σ (b j.1) = C j.2
-
-/-- Exact mathematical output: choose a univariate basis entry when one exists;
-otherwise take the positive real roots of the actual z-leading coefficients. -/
-noncomputable def BlockAlgorithmCandidates {σ ι : Type*}
-    (z : MonomialOrder σ) (b : ι → MvPolynomial (Option σ) ℚ) (a : ℝ) : Prop := by
-  classical
-  exact 0 < a ∧ if h : ∃ j, UnivariateBasisEntry b j then
-    (Classical.choose h).2.eval₂ (algebraMap ℚ ℝ) a = 0
-  else ∃ i, (z.leadingCoeff (optionEquivRight ℚ σ (b i))).eval₂ (algebraMap ℚ ℝ) a = 0
 
 def CoordinateCandidateAt {σ : Type*} (I : Ideal (MvPolynomial (Option σ) ℝ))
     (a : ℝ) : Prop :=

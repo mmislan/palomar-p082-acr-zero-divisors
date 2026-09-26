@@ -1,3 +1,4 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import proofs.ACRZeroDivisors.PositiveLoci
 import Mathlib.Data.Fin.VecNotation
 import Mathlib.Algebra.BigOperators.Fin
@@ -8,29 +9,6 @@ namespace ACRZeroDivisors
 @[simp] theorem vec3_two {α : Type*} (a b c : α) : (![a,b,c] : Fin 3 → α) 2 = c := rfl
 @[simp] theorem vec4_two {α : Type*} (a b c d : α) : (![a,b,c,d] : Fin 4 → α) 2 = c := rfl
 @[simp] theorem vec4_three {α : Type*} (a b c d : α) : (![a,b,c,d] : Fin 4 → α) 3 = d := rfl
-
-structure Reaction (n : ℕ) where
-  source : Fin n → ℕ
-  target : Fin n → ℕ
-  rate : ℚ
-
-def Bimolecular {n : ℕ} (r : Reaction n) : Prop :=
-  (∑ i, r.source i) ≤ 2 ∧ (∑ i, r.target i) ≤ 2 ∧ 0 < r.rate
-
-def field {n : ℕ} (rs : List (Reaction n)) (x : Fin n → ℝ) (i : Fin n) : ℝ :=
-  (rs.map fun r => (r.rate : ℝ) * (∏ j, x j ^ r.source j) *
-    ((r.target i : ℝ) - (r.source i : ℝ))).sum
-
-def necessityNetwork : List (Reaction 3) :=
-  [⟨![1,1,0], ![0,2,0], 1⟩, ⟨![0,1,0], ![1,0,0], 1⟩,
-   ⟨![0,1,0], ![0,0,1], 1⟩, ⟨![1,0,1], ![0,0,2], 1⟩,
-   ⟨![0,0,1], ![1,0,0], 3⟩]
-
-def sufficiencyNetwork : List (Reaction 4) :=
-  [⟨![2,0,0,0], ![1,0,1,0], 1⟩, ⟨![0,0,1,0], ![1,0,0,1], 1⟩,
-   ⟨![0,0,0,1], ![1,1,0,0], 1⟩, ⟨![1,1,0,0], ![0,1,0,0], 1⟩,
-   ⟨![0,1,0,0], ![1,1,0,0], 1⟩, ⟨![1,0,0,0], ![0,0,0,0], 1⟩,
-   ⟨![0,2,0,0], ![0,0,0,0], 1/2⟩]
 
 def orderNetwork : List (Reaction 3) :=
   [⟨![1,1,0], ![1,0,0], 1⟩, ⟨![0,0,1], ![0,1,1], 1⟩,

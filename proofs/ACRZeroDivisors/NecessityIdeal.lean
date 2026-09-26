@@ -1,3 +1,4 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import Mathlib.Algebra.MvPolynomial.Eval
 import Mathlib.RingTheory.Ideal.Span
 import Mathlib.RingTheory.Ideal.Maps
@@ -10,15 +11,11 @@ import proofs.ACRZeroDivisors.MassActionSource
 namespace ACRZeroDivisors
 open MvPolynomial
 
-abbrev Poly3 := MvPolynomial (Fin 3) ℝ
+
 noncomputable def nA : Poly3 := -X 0*X 1+X 1-X 0*X 2+3*X 2
 noncomputable def nB : Poly3 := X 0*X 1-2*X 1
 noncomputable def nC : Poly3 := X 0*X 2-3*X 2+X 1
 noncomputable def necessityIdeal : Ideal Poly3 := Ideal.span {nA,nB,nC}
-
-def CoordinateCandidate (I : Ideal Poly3) (alpha : ℝ) : Prop :=
-  X 0 - C alpha ∈ I ∨
-    (X 0 - C alpha ∉ I ∧ ∃ h : Poly3, h ∉ I ∧ (X 0 - C alpha)*h ∈ I)
 
 theorem necessity_eval_zero (x : Fin 3 → ℝ)
     (hA : eval x nA = 0) (hB : eval x nB = 0) (hC : eval x nC = 0)
@@ -77,14 +74,6 @@ theorem necessity_not_unique_candidate :
   have : (2 : ℝ) = 3 := h2.trans h3.symm
   norm_num at this
 
-noncomputable def polynomialField {n : ℕ} (rs : List (Reaction n))
-    (i : Fin n) : MvPolynomial (Fin n) ℝ :=
-  (rs.map fun r => C (r.rate : ℝ) * (∏ j, X j ^ r.source j) *
-    (C (r.target i : ℝ) - C (r.source i : ℝ))).sum
-
-noncomputable def steadyIdeal {n : ℕ} (rs : List (Reaction n)) :
-    Ideal (MvPolynomial (Fin n) ℝ) := Ideal.span (Set.range (polynomialField rs))
-
 theorem necessity_polynomial_field :
     polynomialField necessityNetwork = ![nA,nB,nC] := by
   funext i
@@ -105,12 +94,6 @@ theorem necessity_original_ideal : steadyIdeal necessityNetwork = necessityIdeal
     · exact ⟨0, rfl⟩
     · exact ⟨1, rfl⟩
     · exact ⟨2, rfl⟩
-
-def PositiveSteady {n : ℕ} (rs : List (Reaction n)) (x : Fin n → ℝ) : Prop :=
-  (∀ i, 0 < x i) ∧ ∀ i, field rs x i = 0
-
-def NonvacuousACR {n : ℕ} (rs : List (Reaction n)) (i : Fin n) (alpha : ℝ) : Prop :=
-  (∃ x, PositiveSteady rs x) ∧ ∀ x, PositiveSteady rs x → x i = alpha
 
 theorem necessity_literal_acr : NonvacuousACR necessityNetwork 0 2 := by
   constructor

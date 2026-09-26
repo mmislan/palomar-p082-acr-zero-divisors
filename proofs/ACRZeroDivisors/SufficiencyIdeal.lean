@@ -1,9 +1,10 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import proofs.ACRZeroDivisors.NecessityIdeal
 import proofs.ACRZeroDivisors.IdealSubstitution
 
 namespace ACRZeroDivisors
 open MvPolynomial
-abbrev Poly4 := MvPolynomial (Fin 4) ℝ
+
 noncomputable def sA : Poly4 := -(X 0)^2+X 2+X 3-X 0*X 1+X 1-X 0
 noncomputable def sB : Poly4 := X 3-(X 1)^2
 noncomputable def sC : Poly4 := (X 0)^2-X 2

@@ -1,3 +1,4 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import proofs.ACRZeroDivisors.OrderCertificate
 import Mathlib.LinearAlgebra.Finsupp.LinearCombination
 import Mathlib.Algebra.Polynomial.Eval.Defs
@@ -5,23 +6,10 @@ import Mathlib.Algebra.Polynomial.Eval.Defs
 namespace ACRZeroDivisors.OrderWitness
 open MvPolynomial
 
-def zKey (e : Exponent) : ℕ ×ₗ ℕ := toLex (zDegree e,e 0)
-
-noncomputable def tCoefficient (a b : ℕ) : P →ₗ[ℚ] Polynomial ℚ :=
-  (Finsupp.linearCombination ℚ (fun e : Exponent =>
-    if e 0=a ∧ e 1=b then Polynomial.X^(e 2) else 0)).comp
-      (AddMonoidAlgebra.coeffLinearEquiv ℚ).toLinearMap
-
 theorem tCoefficient_monomial (a b : ℕ) (e : Exponent) (c : ℚ) :
     tCoefficient a b (monomial e c) =
       c • (if e 0=a ∧ e 1=b then Polynomial.X^(e 2) else 0) := by
   exact Finsupp.linearCombination_single _ _ _
-
-noncomputable def leadingCoefficientZ (p : P) : Polynomial ℚ :=
-  if h : p.support.Nonempty then
-    let e := Classical.choose (p.support.exists_max_image zKey h)
-    tCoefficient (e 0) (e 1) p
-  else 0
 
 theorem leadingCoefficientZ_eq (p : P) (e : Exponent) (he : e ∈ p.support)
     (hmax : ∀ d ∈ p.support, zKey d ≤ zKey e) :
@@ -77,8 +65,6 @@ theorem b3_lcZ : leadingCoefficientZ b3 = -1 := by
     rcases support_binomial hd with rfl | rfl
     · norm_num [zKey,zDegree,Prod.Lex.toLex_le_toLex]
     · exact le_rfl
-
-def PureT (p : P) : Prop := ∀ e ∈ p.support, zDegree e = 0
 
 theorem basis_no_pureT (p : P) (hp : p ∈ ({b1,b2,b3} : Set P)) : ¬ PureT p := by
   simp only [Set.mem_insert_iff,Set.mem_singleton_iff] at hp

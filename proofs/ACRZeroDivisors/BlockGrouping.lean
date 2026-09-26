@@ -1,3 +1,4 @@
+import proofs.ACRZeroDivisors.ChallengeDefinitions
 import proofs.ACRZeroDivisors.MonicRegularity
 import Mathlib.Algebra.MvPolynomial.Equiv
 import Mathlib.RingTheory.Ideal.Maps
@@ -46,11 +47,6 @@ theorem grouped_coeff {σ K : Type*} [CommRing K]
           cases n with
           | zero => simp
           | succ n => simpa using hp d n
-
-/-- The full order compares the z block before the distinguished variable. -/
-def BlockCompatible {σ : Type*} (full : MonomialOrder (Option σ))
-    (z : MonomialOrder σ) : Prop :=
-  ∀ d e, full.toSyn d ≤ full.toSyn e → z.toSyn d.some ≤ z.toSyn e.some
 
 theorem grouped_support {σ K : Type*} [CommRing K]
     (p : MvPolynomial (Option σ) K) (d : σ →₀ ℕ) :
