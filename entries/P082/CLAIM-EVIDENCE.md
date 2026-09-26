@@ -1,12 +1,16 @@
 # P082: claim-to-evidence correspondence
 
-Source-reading review dated 2026-09-24. No Lean was executed for this review.
+Source-reading review dated 2026-09-24, reconciled to the strengthened statement
+and foundation refactor on 2026-09-25. No Lean was executed for the reconciliation.
 
 This is an agent-assisted reading of `Registry/P082/Challenge.lean`, the
 Solution's imported sources and the companion manuscript. It is not an
 independent human review. Target-toolchain Solution compilation, Comparator
-comparison and independent kernel checks are pending. Seven proof files carry
-prepared but unverified polynomial-API adaptations (see below).
+comparison and independent kernel checks of the current foundation candidate are
+pending. The strengthened statement and applicability example built before the
+foundation refactor, but that build is not a receipt for the current source tree.
+Seven proof files carry polynomial-API adaptations, and the shared-definition
+foundation refactor touches sixteen closure files (see below).
 
 Common definitions (namespace `ACRZeroDivisors`): a `Reaction n` has source and
 target exponent vectors in `ℕ^n` and a rational rate. `Bimolecular r` means
@@ -28,7 +32,7 @@ it. This is the manuscript's set `Z_i` and condition (13) of the source.
 | `ACRZeroDivisors.question313_necessity_counterexample` | For the literal five-reaction network `A+B→2B, B→A, B→C, A+C→2C` (rate 1) and `C→A` (rate 3), species `A = x 0`: every reaction is `Bimolecular`, `NonvacuousACR necessityNetwork 0 2` holds, and `¬ ∃! α, 0 < α ∧ CoordinateCandidate (steadyIdeal necessityNetwork) α`. | Proposition 3.1 (the formal statement omits the full classification `Z_A = {2,3}`) | Historical Lean 4.30 receipt for the original sources; target statement compilation only. |
 | `ACRZeroDivisors.question313_sufficiency_counterexample` | For the literal seven-reaction network `2A→A+C, C→A+D, D→A+B, A+B→B, B→A+B, A→∅` (rate 1) and `2B→∅` (rate 1/2), species `A = x 0`: every reaction is `Bimolecular`, a positive steady state exists, there is a unique `α > 0` with `CoordinateCandidate4 (steadyIdeal sufficiencyNetwork) α`, and `¬ ∃ α, NonvacuousACR sufficiencyNetwork 0 α`. | Proposition 3.2 | Same as above. |
 | `ACRZeroDivisors.OrderWitness.unrestricted_order_counterexample` | For exponents `(i,j,k)` of `u = x 0`, `v = x 1`, `t = x 2`, `MixedLT` compares `i+j`, then `k`, then `i`. It is a conjunction: (1) `AdmissibleEliminationOrder` (well-founded, irreflexive, transitive, total, translation-invariant, nothing below `0`, and any polynomial whose leading exponent has zero `z`-degree is pure in `t`); (2) `ReducedBasisCertificate`: the rational steady ideal of `T+U→T, V→U+V, U→U+V, T+V→T` (rate 1) equals `⟨u²−v², ut−v, vt−u⟩`, with those leading exponents, monic leaders, leading-ideal cover and reducedness; (3) all reactions are bimolecular; (4) `NonvacuousACR witnessNetwork 2 1`; (5) `X 2 − 1` is not in the real ideal but annihilates an element outside it; (6) `¬ AlgorithmCandidates {b1,b2,b3} 1`. `AlgorithmCandidates` returns the positive roots of the pure-`t` basis elements if any exist, and otherwise the positive roots of the `z`-leading coefficients in `ℚ[t]` for the graded order restricted to `z = (u,v)`. | Proposition 4.1 | Historical receipt for the original sources. `ReducedBasisCertificate`, `IsLeading`, `tCoefficient` and the proofs in `OrderMain`, `OrderNormalForm`, `OrderReducedBasis`, `OrderCertificate` and `OrderOutput` use the adapted coefficient API, which has not been proof-checked. |
-| `ACRZeroDivisors.mass_action_block_algorithm_complete` | For any `n`, types `σ` and finite `ι`, reactions `rs` with arbitrary rational rates, a bijection `e : Fin n ≃ Option σ` (`t` is species `e.symm none`), monomial orders `full` on `Option σ` and `z` on `σ` with `BlockCompatible full z` (the `full` order is monotone in the `z`-part, i.e. a block order comparing `z` first), and `b : ι → ℚ[Option σ]` with `hcover` (every nonzero element of the renamed rational steady ideal has leading exponent divisible by that of some `b i`) and `hgen` (each `b i` lies in that ideal); for every real `a` with `NonvacuousACR rs (e.symm none) a` and `SpeciesCoordinateCandidate (steadyIdeal rs) (e.symm none) a`, it concludes `BlockAlgorithmCandidates z b a`: `0 < a` and either a chosen univariate entry of `b` vanishes at `a`, or, when there is none, some `z`-leading coefficient of some `b i` vanishes at `a`. | Theorem 5.1 and Corollary 5.2 (the corollary's zero-divisor ACR form over `ℝ`) | Historical receipt for the original sources. `BlockGrouping` and `ScalarExtension`, in its proof closure, carry unverified API adaptations. |
+| `ACRZeroDivisors.mass_action_block_algorithm_complete` | For any `n`, types `σ` and finite `ι`, reactions `rs` with arbitrary rational rates, a bijection `e : Fin n ≃ Option σ` (`t` is species `e.symm none`), monomial orders `full` on `Option σ` and `z` on `σ` with `BlockCompatible full z` (the `full` order is monotone in the `z`-part, i.e. a block order comparing `z` first), and `b : ι → ℚ[Option σ]` with every `b i ≠ 0`, `hcover` (every nonzero element of the renamed rational steady ideal has leading exponent divisible by that of some `b i`) and `hgen` (each `b i` lies in that ideal); for every real `a` with `NonvacuousACR rs (e.symm none) a` and `SpeciesCoordinateCandidate (steadyIdeal rs) (e.symm none) a`, it concludes `BlockAlgorithmCandidates z b a`: `0 < a` and either a chosen univariate entry of `b` vanishes at `a`, or, when there is none, some `z`-leading coefficient of some `b i` vanishes at `a`. | Theorem 5.1 and Corollary 5.2 (the corollary's zero-divisor ACR form over `ℝ`) | Historical receipt for the original sources. The nonzero-basis hypothesis is a later strengthening, and `BlockGrouping` and `ScalarExtension` carry target-API adaptations; the current foundation candidate is unverified. |
 
 The necessity counterexample and the order counterexample are in `NecessityIdeal`
 and `OrderMain`; the sufficiency counterexample and completeness theorem are in
@@ -57,18 +61,19 @@ of the source and was not independently checked against the journal version.
 
 A returned candidate is not thereby an ACR value: the completeness theorem is
 the implication ACR value and zero-divisor value ⇒ algorithmic candidate, not
-its converse. (The manuscript also shows that the necessity network returns the non-ACR
-candidate 3; that classification is not part of the selected statements.)
+its converse. The necessity network already returns the non-ACR value 3.
 
 ## Evidence boundary
 
 - The completeness theorem takes the Gröbner-basis property as hypotheses
   (`hcover`, `hgen`, `BlockCompatible`). It does not compute a basis, isolate
   roots, bound complexity or decide ACR. The candidate set is an exact root-set
-  specification. The cover hypothesis does not require nonzero entries. A zero
-  entry makes the cover vacuous but is itself a univariate entry, so the
-  univariate branch of the conclusion then applies. This is not a soundness
-  defect: any univariate element of the ideal vanishes at an ACR value.
+  specification. The strengthened theorem additionally requires every basis
+  entry to be nonzero, ruling out a vacuous leading-cover witness built from a
+  zero entry. The worked application in `ApplicabilityExample.lean` instantiates
+  all hypotheses with the nonzero basis `X_B (1 - X_A)` for `A+B→2B, B→A`
+  and proves that the algorithm output is exactly the ACR value `1`; this example
+  is imported by the Solution but is not a selected Comparator declaration.
 - The formal completeness statement covers real values `a`. The manuscript's
   extension-field form of Theorem 5.1 and Corollary 5.2(b) for arbitrary `L/ℚ`
   is not a selected declaration. Rates in the fourth declaration are arbitrary
@@ -86,9 +91,11 @@ candidate 3; that classification is not part of the selected statements.)
   polynomial-API adaptations recorded in
   `preparation/p082-polynomial-migration.json` and
   `preparation/P082-MIGRATION.md`. On 2026-09-24 each recorded `after_sha256`
-  still matched the current file by static hash comparison. These adaptations
-  are **prepared, not verified**: no target Solution build has run.
-- Sources: the Solution's local import closure is 25 modules (24
+  still matched the current file by static hash comparison. The strengthened
+  statement and worked example subsequently built locally, but the newer
+  `ChallengeDefinitions.lean` refactor has not been compiled. None of these
+  facts is a full Comparator/kernel receipt for the current candidate.
+- Sources: the current Solution's local import closure is 28 modules (27
   `proofs/ACRZeroDivisors` modules plus `Registry.P082.Solution`); external
   imports are Mathlib and `Lean.Elab.Tactic.Omega`. A static grep found no
   `sorry`, `admit` or `axiom` declaration; the only match is the word "axioms"
