@@ -1,0 +1,23 @@
+{
+  "challenge_module": "Registry.P082.Challenge",
+  "solution_module": "Registry.P082.Solution",
+  "theorem_names": [
+    "ACRZeroDivisors.question313_necessity_counterexample",
+    "ACRZeroDivisors.question313_sufficiency_counterexample",
+    "ACRZeroDivisors.OrderWitness.unrestricted_order_counterexample",
+    "ACRZeroDivisors.mass_action_block_algorithm_complete"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "external_kernels": {
+    "nanoda": [
+      "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/nanoda_bin"
+    ],
+    "con-ron": [
+      "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/con-ron"
+    ]
+  }
+}
