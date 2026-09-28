@@ -1,4 +1,8 @@
-import proofs.ACRZeroDivisors.OrderOutput
+module
+
+public import proofs.ACRZeroDivisors.OrderOutput
+
+@[expose] public section
 
 namespace ACRZeroDivisors.OrderWitness
 open MvPolynomial

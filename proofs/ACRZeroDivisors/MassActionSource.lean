@@ -1,8 +1,12 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import proofs.ACRZeroDivisors.PositiveLoci
-import Mathlib.Data.Fin.VecNotation
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Tactic.FinCases
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import proofs.ACRZeroDivisors.PositiveLoci
+public import Mathlib.Data.Fin.VecNotation
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Tactic.FinCases
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 

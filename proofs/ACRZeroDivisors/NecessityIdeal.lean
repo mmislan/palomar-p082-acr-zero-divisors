@@ -1,12 +1,16 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import Mathlib.Algebra.MvPolynomial.Eval
-import Mathlib.RingTheory.Ideal.Span
-import Mathlib.RingTheory.Ideal.Maps
-import Mathlib.Basic.Real.Basic
-import Mathlib.Data.Fin.VecNotation
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Ring
-import proofs.ACRZeroDivisors.MassActionSource
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import Mathlib.Algebra.MvPolynomial.Eval
+public import Mathlib.RingTheory.Ideal.Span
+public import Mathlib.RingTheory.Ideal.Maps
+public import Mathlib.Basic.Real.Basic
+public import Mathlib.Data.Fin.VecNotation
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Ring
+public import proofs.ACRZeroDivisors.MassActionSource
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

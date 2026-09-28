@@ -1,7 +1,11 @@
-import proofs.ACRZeroDivisors.BlockGrouping
-import Mathlib.Algebra.Order.Monoid.Lex
-import Mathlib.Algebra.Order.Monoid.Prod
-import Mathlib.Data.Prod.Lex
+module
+
+public import proofs.ACRZeroDivisors.BlockGrouping
+public import Mathlib.Algebra.Order.Monoid.Lex
+public import Mathlib.Algebra.Order.Monoid.Prod
+public import Mathlib.Data.Prod.Lex
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 

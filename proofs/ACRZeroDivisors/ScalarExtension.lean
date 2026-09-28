@@ -1,5 +1,9 @@
-import proofs.ACRZeroDivisors.CoefficientLocalization
-import Mathlib.LinearAlgebra.Dual.Lemmas
+module
+
+public import proofs.ACRZeroDivisors.CoefficientLocalization
+public import Mathlib.LinearAlgebra.Dual.Lemmas
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

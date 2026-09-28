@@ -1,14 +1,18 @@
-import Mathlib.RingTheory.MvPolynomial.Groebner
-import Mathlib.RingTheory.Ideal.Maps
-import Mathlib.Algebra.MvPolynomial.Equiv
-import Mathlib.Basic.Real.Basic
-import Mathlib.Algebra.Algebra.Rat
-import Mathlib.Data.Fin.VecNotation
-import Mathlib.Data.Prod.Lex
-import Mathlib.Data.Finset.Max
-import Mathlib.Data.Finsupp.Order
-import Mathlib.LinearAlgebra.Finsupp.LinearCombination
-import Mathlib.Algebra.Polynomial.Eval.Algebra
+module
+
+public import Mathlib.RingTheory.MvPolynomial.Groebner
+public import Mathlib.RingTheory.Ideal.Maps
+public import Mathlib.Algebra.MvPolynomial.Equiv
+public import Mathlib.Basic.Real.Basic
+public import Mathlib.Algebra.Algebra.Rat
+public import Mathlib.Data.Fin.VecNotation
+public import Mathlib.Data.Prod.Lex
+public import Mathlib.Data.Finset.Max
+public import Mathlib.Data.Finsupp.Order
+public import Mathlib.LinearAlgebra.Finsupp.LinearCombination
+public import Mathlib.Algebra.Polynomial.Eval.Algebra
+
+@[expose] public section
 
 /-!
 # ACR coordinate candidates and the corrected block-order algorithm

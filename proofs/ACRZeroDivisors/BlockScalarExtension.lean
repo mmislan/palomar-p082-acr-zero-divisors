@@ -1,4 +1,8 @@
-import proofs.ACRZeroDivisors.BlockTorsion
+module
+
+public import proofs.ACRZeroDivisors.BlockTorsion
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

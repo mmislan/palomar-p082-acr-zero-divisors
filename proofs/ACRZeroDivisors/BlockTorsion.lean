@@ -1,6 +1,10 @@
-import proofs.ACRZeroDivisors.BlockGrouping
-import proofs.ACRZeroDivisors.BlockCoefficientCore
-import proofs.ACRZeroDivisors.ScalarExtension
+module
+
+public import proofs.ACRZeroDivisors.BlockGrouping
+public import proofs.ACRZeroDivisors.BlockCoefficientCore
+public import proofs.ACRZeroDivisors.ScalarExtension
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

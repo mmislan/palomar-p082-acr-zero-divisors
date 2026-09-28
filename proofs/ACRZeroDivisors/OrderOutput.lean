@@ -1,7 +1,11 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import proofs.ACRZeroDivisors.OrderCertificate
-import Mathlib.LinearAlgebra.Finsupp.LinearCombination
-import Mathlib.Algebra.Polynomial.Eval.Defs
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import proofs.ACRZeroDivisors.OrderCertificate
+public import Mathlib.LinearAlgebra.Finsupp.LinearCombination
+public import Mathlib.Algebra.Polynomial.Eval.Defs
+
+@[expose] public section
 
 namespace ACRZeroDivisors.OrderWitness
 open MvPolynomial

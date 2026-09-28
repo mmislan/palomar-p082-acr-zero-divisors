@@ -1,7 +1,11 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import Mathlib.RingTheory.MvPolynomial.Groebner
-import Mathlib.RingTheory.Ideal.Span
-import Mathlib.Tactic.Ring
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import Mathlib.RingTheory.MvPolynomial.Groebner
+public import Mathlib.RingTheory.Ideal.Span
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

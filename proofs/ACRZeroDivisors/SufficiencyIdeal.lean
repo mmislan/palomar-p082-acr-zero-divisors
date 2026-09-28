@@ -1,6 +1,10 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import proofs.ACRZeroDivisors.NecessityIdeal
-import proofs.ACRZeroDivisors.IdealSubstitution
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import proofs.ACRZeroDivisors.NecessityIdeal
+public import proofs.ACRZeroDivisors.IdealSubstitution
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

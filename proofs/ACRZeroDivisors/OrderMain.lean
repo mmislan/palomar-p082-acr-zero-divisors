@@ -1,6 +1,10 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import proofs.ACRZeroDivisors.OrderCounterexample
-import proofs.ACRZeroDivisors.OrderReducedBasis
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import proofs.ACRZeroDivisors.OrderCounterexample
+public import proofs.ACRZeroDivisors.OrderReducedBasis
+
+@[expose] public section
 
 namespace ACRZeroDivisors.OrderWitness
 open MvPolynomial

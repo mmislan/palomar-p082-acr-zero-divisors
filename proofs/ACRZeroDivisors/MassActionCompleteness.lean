@@ -1,6 +1,10 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import proofs.ACRZeroDivisors.BlockAlgorithm
-import proofs.ACRZeroDivisors.MassActionIdealBridge
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import proofs.ACRZeroDivisors.BlockAlgorithm
+public import proofs.ACRZeroDivisors.MassActionIdealBridge
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

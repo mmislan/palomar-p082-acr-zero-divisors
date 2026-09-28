@@ -1,5 +1,9 @@
-import proofs.ACRZeroDivisors.MassActionCompleteness
-import proofs.ACRZeroDivisors.BlockOrder
+module
+
+public import proofs.ACRZeroDivisors.MassActionCompleteness
+public import proofs.ACRZeroDivisors.BlockOrder
+
+@[expose] public section
 
 /-!
 # A non-degenerate application of `mass_action_block_algorithm_complete`

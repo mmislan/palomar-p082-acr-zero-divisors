@@ -1,7 +1,11 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import proofs.ACRZeroDivisors.MonicRegularity
-import Mathlib.Algebra.MvPolynomial.Equiv
-import Mathlib.RingTheory.Ideal.Maps
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import proofs.ACRZeroDivisors.MonicRegularity
+public import Mathlib.Algebra.MvPolynomial.Equiv
+public import Mathlib.RingTheory.Ideal.Maps
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

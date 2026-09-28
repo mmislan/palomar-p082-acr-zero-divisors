@@ -1,9 +1,13 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import Mathlib.Algebra.MvPolynomial.Basic
-import Mathlib.Data.Fin.VecNotation
-import Mathlib.Tactic.FinCases
-import Lean.Elab.Tactic.Omega
-import Mathlib.Tactic.NormNum
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import Mathlib.Algebra.MvPolynomial.Basic
+public import Mathlib.Data.Fin.VecNotation
+public import Mathlib.Tactic.FinCases
+public import Lean.Elab.Tactic.Omega
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 namespace ACRZeroDivisors.OrderWitness
 

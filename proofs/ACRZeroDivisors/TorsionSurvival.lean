@@ -1,8 +1,12 @@
-import Mathlib.Algebra.Polynomial.Div
-import Mathlib.Algebra.MvPolynomial.CommRing
-import Mathlib.RingTheory.Ideal.Basic
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.LinearCombination
+module
+
+public import Mathlib.Algebra.Polynomial.Div
+public import Mathlib.Algebra.MvPolynomial.CommRing
+public import Mathlib.RingTheory.Ideal.Basic
+public import Mathlib.Tactic.Ring
+public import Mathlib.Tactic.LinearCombination
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

@@ -1,6 +1,10 @@
-import Mathlib.Algebra.MvPolynomial.Eval
-import Mathlib.RingTheory.Ideal.Span
-import Mathlib.Tactic.Ring
+module
+
+public import Mathlib.Algebra.MvPolynomial.Eval
+public import Mathlib.RingTheory.Ideal.Span
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

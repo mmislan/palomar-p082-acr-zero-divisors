@@ -1,9 +1,13 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import proofs.ACRZeroDivisors.OrderNormalForm
-import Mathlib.Data.Prod.Lex
-import Mathlib.Data.Finset.Max
-import Mathlib.Data.Finsupp.Order
-import Mathlib.Algebra.MvPolynomial.CommRing
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import proofs.ACRZeroDivisors.OrderNormalForm
+public import Mathlib.Data.Prod.Lex
+public import Mathlib.Data.Finset.Max
+public import Mathlib.Data.Finsupp.Order
+public import Mathlib.Algebra.MvPolynomial.CommRing
+
+@[expose] public section
 
 namespace ACRZeroDivisors.OrderWitness
 open MvPolynomial

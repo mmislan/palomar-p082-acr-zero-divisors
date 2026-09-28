@@ -1,5 +1,9 @@
-import proofs.ACRZeroDivisors.CoefficientLocalization
-import proofs.ACRZeroDivisors.TorsionSurvival
+module
+
+public import proofs.ACRZeroDivisors.CoefficientLocalization
+public import proofs.ACRZeroDivisors.TorsionSurvival
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

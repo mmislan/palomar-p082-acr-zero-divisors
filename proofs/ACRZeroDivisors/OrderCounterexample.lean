@@ -1,7 +1,11 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import proofs.ACRZeroDivisors.OrderOutput
-import proofs.ACRZeroDivisors.NecessityIdeal
-import Mathlib.Algebra.Polynomial.Eval.Algebra
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import proofs.ACRZeroDivisors.OrderOutput
+public import proofs.ACRZeroDivisors.NecessityIdeal
+public import Mathlib.Algebra.Polynomial.Eval.Algebra
+
+@[expose] public section
 
 namespace ACRZeroDivisors.OrderWitness
 open MvPolynomial

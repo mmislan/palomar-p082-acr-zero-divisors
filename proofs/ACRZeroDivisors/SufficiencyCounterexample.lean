@@ -1,6 +1,10 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import proofs.ACRZeroDivisors.SufficiencyIdeal
-import Mathlib.Tactic.LinearCombination
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import proofs.ACRZeroDivisors.SufficiencyIdeal
+public import Mathlib.Tactic.LinearCombination
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

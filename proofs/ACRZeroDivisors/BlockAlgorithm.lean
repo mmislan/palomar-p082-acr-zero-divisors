@@ -1,7 +1,11 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import proofs.ACRZeroDivisors.BlockScalarExtension
-import Mathlib.Basic.Real.Basic
-import Mathlib.Algebra.Algebra.Rat
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import proofs.ACRZeroDivisors.BlockScalarExtension
+public import Mathlib.Basic.Real.Basic
+public import Mathlib.Algebra.Algebra.Rat
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

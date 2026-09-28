@@ -1,6 +1,10 @@
-import proofs.ACRZeroDivisors.MonicRegularity
-import Mathlib.RingTheory.MvPolynomial.Localization
-import Mathlib.RingTheory.Localization.Ideal
+module
+
+public import proofs.ACRZeroDivisors.MonicRegularity
+public import Mathlib.RingTheory.MvPolynomial.Localization
+public import Mathlib.RingTheory.Localization.Ideal
+
+@[expose] public section
 
 namespace ACRZeroDivisors
 open MvPolynomial

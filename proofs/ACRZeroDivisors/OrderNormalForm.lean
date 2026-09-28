@@ -1,8 +1,12 @@
-import proofs.ACRZeroDivisors.ChallengeDefinitions
-import proofs.ACRZeroDivisors.OrderExponent
-import Mathlib.LinearAlgebra.Finsupp.Defs
-import Mathlib.RingTheory.Ideal.Span
-import Mathlib.Tactic.Ring
+module
+
+public import proofs.ACRZeroDivisors.ChallengeDefinitions
+public import proofs.ACRZeroDivisors.OrderExponent
+public import Mathlib.LinearAlgebra.Finsupp.Defs
+public import Mathlib.RingTheory.Ideal.Span
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 namespace ACRZeroDivisors.OrderWitness
 open MvPolynomial

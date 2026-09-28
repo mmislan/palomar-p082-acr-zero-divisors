@@ -1,5 +1,9 @@
-import proofs.ACRZeroDivisors.NecessityIdeal
-import proofs.ACRZeroDivisors.SufficiencyCounterexample
-import proofs.ACRZeroDivisors.OrderMain
-import proofs.ACRZeroDivisors.MassActionCompleteness
-import proofs.ACRZeroDivisors.ApplicabilityExample
+module
+
+public import proofs.ACRZeroDivisors.NecessityIdeal
+public import proofs.ACRZeroDivisors.SufficiencyCounterexample
+public import proofs.ACRZeroDivisors.OrderMain
+public import proofs.ACRZeroDivisors.MassActionCompleteness
+public import proofs.ACRZeroDivisors.ApplicabilityExample
+
+@[expose] public section
